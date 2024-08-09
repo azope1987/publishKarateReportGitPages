@@ -39,4 +39,11 @@ jobs:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/target/karate-reports/*.json"
         show-global-summary-report: true
+
+    - name: Deploy 🚀
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+          branch: gh-pages
+          folder: ./reports # The folder the action should deploy.
     
