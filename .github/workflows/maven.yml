@@ -38,4 +38,5 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/target/karate-reports/*.json"
+        show-global-summary-report: true
     
