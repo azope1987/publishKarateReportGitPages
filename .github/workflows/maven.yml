@@ -33,10 +33,8 @@ jobs:
         mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
         shell: cmd
         timeout-minutes: 360
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
+    - uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
-        files: |
-          **/target/surefire-reports/TEST-*.xml
-          **/target/karate-reports/*.json
+        access-token: ${{ secrets.GITHUB_TOKEN }}
+        path: "**/target/karate-reports/*.json"
+    
