@@ -37,6 +37,6 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-      files: |
-        **/target/surefire-reports/TEST-*.xml
-        **/target/karate-reports/*.json
+        files: |
+          **/target/surefire-reports/TEST-*.xml
+          **/target/karate-reports/*.json
