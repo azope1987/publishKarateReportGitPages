@@ -33,17 +33,35 @@ jobs:
         mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
         shell: cmd
         timeout-minutes: 360
-    - uses: deblockt/cucumber-report-annotations-action@v1.7
-      if: always()
-      with:
-        access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "**/target/karate-reports/*.json"
-        show-global-summary-report: true
+    - name: Python setup
+        if: always()
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+    - name: TestRail CLI upload results
+        if: always()
+        run: |
+          pip install trcli
+          trcli -y \
+            -h https://testrail.corp.evolenthealth.com/ \
+            --project "CarePro" \
+            -u AZope@evolent.com \
+            -p xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG \
+            parse_junit \
+            --title "Automated Tests from GitHub workflow" \
+            --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+            -f "./target/karate-reports/*.xml"
+    # - uses: deblockt/cucumber-report-annotations-action@v1.7
+    #   if: always()
+    #   with:
+    #     access-token: ${{ secrets.GITHUB_TOKEN }}
+    #     path: "**/target/karate-reports/*.json"
+    #     show-global-summary-report: true
 
-    - name: Deploy 🚀
-      if: always()
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-          branch: gh-pages
-          folder: ./reports # The folder the action should deploy.
+    # - name: Deploy 🚀
+    #   if: always()
+    #   uses: JamesIves/github-pages-deploy-action@v4
+    #   with:
+    #       branch: gh-pages
+    #       folder: ./reports # The folder the action should deploy.
     
