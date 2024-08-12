@@ -50,7 +50,7 @@ jobs:
           parse_junit \
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
-          -f "./target/karate-reports/*.xml"
+          -f "./target/karate-reports/src.test.java.examples.users.users.xml"
     # - uses: deblockt/cucumber-report-annotations-action@v1.7
     #   if: always()
     #   with:
