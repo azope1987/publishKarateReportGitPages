@@ -47,8 +47,8 @@ jobs:
           --project "Identifi Application" \
           -u AZope@evolent.com \
           -p xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG \
-          --insecure
-          --verbose
+          --insecure \
+          --verbose \
           parse_junit \
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
