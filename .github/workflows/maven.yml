@@ -69,7 +69,7 @@ jobs:
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
           --suite-id 3396 \
-          --run-id ${{ fromJSON(steps.testRunId.outputs.result).id }}
+          --run-id ${{ fromJSON(steps.testRunId.outputs.result).id }} \
           --result-fields custom_environment:2 \
           -f "./target/karate-reports/*.xml"
     # - uses: deblockt/cucumber-report-annotations-action@v1.7
