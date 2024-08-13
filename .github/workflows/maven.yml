@@ -38,6 +38,22 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    - name: Create Test run id
+      id: testRunId
+      if: always()
+      run: |
+        echo =====Create Test Run in TestRail=====
+
+        RESULT=$(curl --request POST \
+        --url  'https://testrail.corp.evolenthealth.com/index.php?/api/v2/add_run/20' \
+        -u 'AZope@evolent.com:xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG' \
+        --header 'Accept: application/json' \
+        --header 'Content-Type: application/json' \
+        --data ' {'suite_id': 3396, 'description': 'Testing testrail cli\n', 'milestone_id': None, 'include_all': False, 'case_ids': [5792071, 5792072, 5792070], 'name': 'Automated Tests from GitHub workflow'}'
+        )
+
+        echo "result=$RESULT" >> "$GITHUB_OUTPUT"
+
     - name: TestRail CLI upload results
       if: always()
       run: |
@@ -53,6 +69,7 @@ jobs:
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
           --suite-id 3396 \
+          --run-id ${{ fromJSON(steps.testRunId.outputs.result).id }}
           --result-fields custom_environment:2 \
           -f "./target/karate-reports/*.xml"
     # - uses: deblockt/cucumber-report-annotations-action@v1.7
