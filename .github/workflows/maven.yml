@@ -44,13 +44,17 @@ jobs:
         pip install trcli
         trcli -y \
           -h https://testrail.corp.evolenthealth.com/ \
-          --project "CarePro" \
+          --project "Identifi Application" \
           -u AZope@evolent.com \
           -p xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG \
+          --insecure
+          --verbose
           parse_junit \
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
-          -f "./target/karate-reports/src.test.java.examples.users.users.xml"
+          --suite-id 3396
+          --result-fields custom_environment:2
+          -f "./target/karate-reports/*.xml"
     # - uses: deblockt/cucumber-report-annotations-action@v1.7
     #   if: always()
     #   with:

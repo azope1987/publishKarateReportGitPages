@@ -1,23 +1,11 @@
 @AZ
-Feature: sample karate test script01
-  for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
+Feature: sample karate test script02
+for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
 
-  Background:
-    * url 'https://jsonplaceholder.typicode.com'
+Background:
+  * url 'https://jsonplaceholder.typicode.com'
 
-  
-  Scenario: get all users and then get the first user by id
-    Given path 'users'
-    When method get
-    Then status 200
-
-    * def first = response[0]
-
-    Given path 'users', first.id
-    When method get
-    Then status 200
-
-  Scenario: create a user and then get it by id01
+Scenario: create a user and then get it by id02
     * def user =
       """
       {
