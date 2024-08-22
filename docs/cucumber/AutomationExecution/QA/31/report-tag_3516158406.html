@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Tag: @Urology</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>CarePro</td>
+      <td>21 Aug 2024, 17:44</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Tag Report</h2>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="stats-table">
+
+
+<thead>
+  <tr class="header dont-sort">
+      <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Tag</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+        <tbody>
+        <tr>
+          <td class="tagname">@Urology</td>
+          <td      class="passed"    >63</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >1</td>
+          <td >0</td>
+          <td >0</td>
+          <td class="total">65</td>
+
+          <td >0</td>
+          <td  class="failed"    >1</td>
+          <td class="total">1</td>
+
+          <td class="duration" data-value="189674968700">3:9.674</td>
+          <td class="failed">Failed</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="elements">
+
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_474725893.html">src/test/java/CarePro/ProviderPortal/features/ReferralCreation/RC_Urology.feature</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_2338160986.html">@UrologyReferralApproved</a>
+       <a href="report-tag_4026588700.html">@ProviderPortal</a>
+       <a href="report-tag_2711625723.html">@PPReferralCreation</a>
+       <a href="report-tag_3516158406.html">@Urology</a>
+</div>
+
+
+  <span class="lead-duration duration">3:9.674</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Urology: Submit New Approved Referral Request By PCP User</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-1" class="collapse collapsable-details  in ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">def getrefcreationdata = db.readRow(get_pp_urology_approved_ref_creation_data)</span>
+
+  <span class="lead-duration duration">1:21.854</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">def isDelAuth = karate.get('isDelAuth',1)</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">if(isDelAuth) karate.configure('afterScenario',function(){if(refNumber != null ) karate.call('classpath:CarePro/CRM/features/AuthActionsFromCRM.feature@DeleteAuth', {refNum: refNumber})})</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">call read('classpath:CarePro/Common/login.feature') {UserName: #(VAR.PCPProviderUserName1), password: #(VAR.PCPProviderPassword1)}</span>
+
+  <span class="lead-duration duration">6.597</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name- passed">
+  <span class="keyword indention"></span>
+  <span class="name">CarePro/Common/login.feature</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; Given passed">
+  <span class="keyword indention">&gt; Given</span>
+  <span class="name">maximize()</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; And passed">
+  <span class="keyword indention">&gt; And</span>
+  <span class="name">waitUntil(&quot;document.readyState == 'complete'&quot;)</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; And passed">
+  <span class="keyword indention">&gt; And</span>
+  <span class="name">retry(20,5000).waitFor(&quot;input[id = 'UserName']&quot;).input(UserName)</span>
+
+  <span class="lead-duration duration">0.089</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; And passed">
+  <span class="keyword indention">&gt; And</span>
+  <span class="name">waitFor(&quot;input[id = 'Password']&quot;).input(password)</span>
+
+  <span class="lead-duration duration">0.075</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; And passed">
+  <span class="keyword indention">&gt; And</span>
+  <span class="name">click(&quot;input[value='Log On']&quot;).delay(5000)</span>
+
+  <span class="lead-duration duration">6.378</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">def reLoginOnError =</span>
+
+  <span class="lead-duration duration">0.001</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>function(){
+    if(exists(&quot;div[class = 'validation-summary-errors']&quot;)){
+        input(&quot;input[id = 'Password']&quot;,password)
+        click(&quot;input[value='Log On']&quot;).delay(5000)
+    }
+}</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">call reLoginOnError</span>
+
+  <span class="lead-duration duration">0.010</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(a.txt,'New Request').waitFor().click().delay(3000)</span>
+
+  <span class="lead-duration duration">3.527</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">selectOption(select.partName,'requestActionDropList',&quot;{}&quot;+getrefcreationdata.RequestActionType)</span>
+
+  <span class="lead-duration duration">3.207</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">selectOption(select.partName,'requestActionSpecialtyDropList',&quot;{}&quot;+getrefcreationdata.SpecialtyName)</span>
+
+  <span class="lead-duration duration">0.032</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.id,'referralProviderSelect').input(getrefcreationdata.ProviderLastName)</span>
+
+  <span class="lead-duration duration">3.105</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(li.partTxt,getrefcreationdata.ProviderName).click().delay(5000)</span>
+
+  <span class="lead-duration duration">8.043</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">selectOption(select.partName,'refPracticeSelect',&quot;{}&quot;+getrefcreationdata.PracticeName)</span>
+
+  <span class="lead-duration duration">0.027</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">delay(5000)</span>
+
+  <span class="lead-duration duration">5.003</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.id,'patientMemberId').scroll().waitFor().input(getrefcreationdata.PatientMemberID)</span>
+
+  <span class="lead-duration duration">0.108</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.id,'searchPatient_button').waitFor().click()</span>
+
+  <span class="lead-duration duration">0.029</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(tblCell.partTxt,getrefcreationdata.PatientMemberID).waitFor().click()</span>
+
+  <span class="lead-duration duration">3.042</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.value,'Select Member').click().delay(5000)</span>
+
+  <span class="lead-duration duration">5.162</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">if(!Ele(h2.txt,'Patient Information',&quot;isExists&quot;)) karate.fail(&quot;Patient Information not displayed&quot;)</span>
+
+  <span class="lead-duration duration">0.014</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.id,'primaryDiagnosisSearchTerm').waitFor().click()</span>
+
+  <span class="lead-duration duration">0.024</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.id,'primaryDiagnosisSearchTerm').input(getrefcreationdata.DiagnosisCode)</span>
+
+  <span class="lead-duration duration">0.062</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.value,'SEARCH').click().delay(5000)</span>
+
+  <span class="lead-duration duration">5.022</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(div.partTxt,getrefcreationdata.DiagnosisCode).waitFor().click()</span>
+
+  <span class="lead-duration duration">0.043</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(input.value,'Select Diagnosis').click().delay(5000)</span>
+
+  <span class="lead-duration duration">5.028</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">selectOption(select.partName,'refToProviderSelect',&quot;{}&quot;+getrefcreationdata.ReftoSpecialist)</span>
+
+  <span class="lead-duration duration">0.027</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">selectOption(select.partName,'refToPracticeSelect',&quot;{}&quot;+getrefcreationdata.ReferredPractice)</span>
+
+  <span class="lead-duration duration">3.039</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">delay(1000)</span>
+
+  <span class="lead-duration duration">1.010</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(a.partTxt,'Next').waitFor().click()</span>
+
+  <span class="lead-duration duration">0.071</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">delay(2000)</span>
+
+  <span class="lead-duration duration">2.006</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">Ele(a.partTxt,'Submit Referral').waitFor().click()</span>
+
+  <span class="lead-duration duration">3.054</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">retry(100,3000).waitFor(tag.strong)</span>
+
+  <span class="lead-duration duration">3.024</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">def refNumber = text(referralAuthTxt)</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">print &quot;PP Urology Approved Referral Generated: &quot;+ refNumber</span>
+
+  <span class="lead-duration duration">0.002</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-4">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details">
+        <pre>17:44:08.891 [print] PP Urology Approved Referral Generated: RR113343 
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">match text(tag.strong).trim() == &quot;APPROVED&quot;</span>
+
+  <span class="lead-duration duration">0.017</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-5">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details">
+        <pre>17:44:49.979 afterScenario hook failed: org.graalvm.polyglot.PolyglotException: js failed:
+&gt;&gt;&gt;&gt;
+01: Ele(button.title,'Delete').waitFor().click().delay(9000)
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: javascript failed twice: {&quot;value&quot;:{&quot;error&quot;:&quot;javascript error&quot;,&quot;message&quot;:&quot;javascript error: Cannot read properties of null (reading 'click')\n  (Session info: chrome=127.0.6533.120)&quot;,&quot;stacktrace&quot;:&quot;\tGetHandleVerifier [0x00007FF76D339642+30946]\n\t(No symbol) [0x00007FF76D2EE3D9]\n\t(No symbol) [0x00007FF76D1E6FDA]\n\t(No symbol) [0x00007FF76D1EDA57]\n\t(No symbol) [0x00007FF76D1F0058]\n\t(No symbol) [0x00007FF76D27BD7B]\n\t(No symbol) [0x00007FF76D25CA6A]\n\t(No symbol) [0x00007FF76D27B041]\n\t(No symbol) [0x00007FF76D25C813]\n\t(No symbol) [0x00007FF76D22A6E5]\n\t(No symbol) [0x00007FF76D22B021]\n\tGetHandleVerifier [0x00007FF76D46F84D+1301229]\n\tGetHandleVerifier [0x00007FF76D47BDC7+1351783]\n\tGetHandleVerifier [0x00007FF76D472A13+1313971]\n\tGetHandleVerifier [0x00007FF76D36DD16+245686]\n\t(No symbol) [0x00007FF76D2F759F]\n\t(No symbol) [0x00007FF76D2F3814]\n\t(No symbol) [0x00007FF76D2F39A2]\n\t(No symbol) [0x00007FF76D2EA3FF]\n\tBaseThreadInitThunk [0x00007FFD61CD7374+20]\n\tRtlUserThreadStart [0x00007FFD61E1CC91+33]\n&quot;}}
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:160)
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:167)
+- com.intuit.karate.driver.WebDriver.evalLocator(WebDriver.java:139)
+- com.intuit.karate.driver.WebDriver.lambda$click$5(WebDriver.java:343)
+- com.intuit.karate.driver.WebDriver.retryIfEnabled(WebDriver.java:121)
+- com.intuit.karate.driver.WebDriver.click(WebDriver.java:343)
+- com.intuit.karate.driver.DriverElement.click(DriverElement.java:105)
+
+classpath:CarePro/CRM/features/AuthActionsFromCRM.feature:56
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name- passed">
+  <span class="keyword indention"></span>
+  <span class="name">CarePro/CRM/features/AuthActionsFromCRM.feature</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">driver &quot;http://jpatil:JayDurva@6931@&quot;+ appcrmurl</span>
+
+  <span class="lead-duration duration">1.561</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">call read 'classpath:CarePro/globalLocators.json'</span>
+
+  <span class="lead-duration duration">0.002</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">call read 'classpath:CarePro/CRM/CRMSQLQueries.json'</span>
+
+  <span class="lead-duration duration">0.002</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">waitUntil(&quot;document.readyState == 'complete'&quot;)</span>
+
+  <span class="lead-duration duration">7.654</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">maximize()</span>
+
+  <span class="lead-duration duration">0.004</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(iframe.name,'InlineDialog_Iframe').waitFor().switchFrame()</span>
+
+  <span class="lead-duration duration">0.062</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">waitFor(&quot;input[type = 'checkbox'][id='dontShowAgainFirst']&quot;).click()</span>
+
+  <span class="lead-duration duration">0.015</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(a.id, 'buttonClose').waitFor().click()</span>
+
+  <span class="lead-duration duration">0.031</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(a.title,'Start search').waitFor().click().delay(2000)</span>
+
+  <span class="lead-duration duration">2.060</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(a.id,'findCriteriaButton').waitFor().click()</span>
+
+  <span class="lead-duration duration">0.046</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(iframe.title,'Content Area').waitFor().switchFrame()</span>
+
+  <span class="lead-duration duration">0.535</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(input.partName,'searchTextBox').waitFor().input(refNum)</span>
+
+  <span class="lead-duration duration">0.491</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(button.id,&quot;SearchButton&quot;).waitFor().click()</span>
+
+  <span class="lead-duration duration">0.029</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">waitUntil(&quot;div[id='loadingdiv']&quot;,&quot;_.getAttribute('style').includes('none')&quot;)</span>
+
+  <span class="lead-duration duration">3.022</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">replace get_authReq_status.REFNUM = refNum</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">def authDetails = db.readRow(get_authReq_status)</span>
+
+  <span class="lead-duration duration">0.515</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">print &quot;Auth &quot;+ refNum +&quot; status verified&quot;</span>
+
+  <span class="lead-duration duration">0.001</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-6">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-6" class="collapse collapsable-details">
+        <pre>17:44:24.979 [print] Auth RR113343 status verified 
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">def waitForPatientNotification =</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-7">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-7" class="collapse collapsable-details">
+        <pre>function(){
+    if(!Ele(div.partId,'patientnotification','isExists')){
+        Ele(button.id,&quot;SearchButton&quot;).waitFor().click();
+        return null;
+    }
+    else{
+        return true;
+    } 
+}</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">if(authDetails.AuthStatus == 725060004) retry(100,3000).waitUntil(waitForPatientNotification)</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(span.txt,refNum).waitFor().click().delay(6000)</span>
+
+  <span class="lead-duration duration">10.596</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">switchFrame(null)</span>
+
+  <span class="lead-duration duration">0.005</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(span.partTxt,'Delete').waitFor().click().delay(8000)</span>
+
+  <span class="lead-duration duration">8.039</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * passed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(iframe.name,'InlineDialog_Iframe').waitFor().switchFrame().delay(3000)</span>
+
+  <span class="lead-duration duration">3.050</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * failed">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">Ele(button.title,'Delete').waitFor().click().delay(9000)</span>
+
+  <span class="lead-duration duration">3.162</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-8">
+          <a>js</a>
+      </div>
+      <div id="msg-8" class="collapse collapsable-details  in ">
+        <pre>js failed:
+&gt;&gt;&gt;&gt;
+01: Ele(button.title,'Delete').waitFor().click().delay(9000)
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: javascript failed twice: {&quot;value&quot;:{&quot;error&quot;:&quot;javascript error&quot;,&quot;message&quot;:&quot;javascript error: Cannot read properties of null (reading 'click')\n  (Session info: chrome=127.0.6533.120)&quot;,&quot;stacktrace&quot;:&quot;\tGetHandleVerifier [0x00007FF76D339642+30946]\n\t(No symbol) [0x00007FF76D2EE3D9]\n\t(No symbol) [0x00007FF76D1E6FDA]\n\t(No symbol) [0x00007FF76D1EDA57]\n\t(No symbol) [0x00007FF76D1F0058]\n\t(No symbol) [0x00007FF76D27BD7B]\n\t(No symbol) [0x00007FF76D25CA6A]\n\t(No symbol) [0x00007FF76D27B041]\n\t(No symbol) [0x00007FF76D25C813]\n\t(No symbol) [0x00007FF76D22A6E5]\n\t(No symbol) [0x00007FF76D22B021]\n\tGetHandleVerifier [0x00007FF76D46F84D+1301229]\n\tGetHandleVerifier [0x00007FF76D47BDC7+1351783]\n\tGetHandleVerifier [0x00007FF76D472A13+1313971]\n\tGetHandleVerifier [0x00007FF76D36DD16+245686]\n\t(No symbol) [0x00007FF76D2F759F]\n\t(No symbol) [0x00007FF76D2F3814]\n\t(No symbol) [0x00007FF76D2F39A2]\n\t(No symbol) [0x00007FF76D2EA3FF]\n\tBaseThreadInitThunk [0x00007FFD61CD7374+20]\n\tRtlUserThreadStart [0x00007FFD61E1CC91+33]\n&quot;}}
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:160)
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:167)
+- com.intuit.karate.driver.WebDriver.evalLocator(WebDriver.java:139)
+- com.intuit.karate.driver.WebDriver.lambda$click$5(WebDriver.java:343)
+- com.intuit.karate.driver.WebDriver.retryIfEnabled(WebDriver.java:121)
+- com.intuit.karate.driver.WebDriver.click(WebDriver.java:343)
+- com.intuit.karate.driver.DriverElement.click(DriverElement.java:105)
+
+classpath:CarePro/CRM/features/AuthActionsFromCRM.feature:56</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-9">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-9" class="collapse collapsable-details">
+        <pre>17:44:49.836 classpath:CarePro/CRM/features/AuthActionsFromCRM.feature:56
+* Ele(button.title,'Delete').waitFor().click().delay(9000)
+js failed:
+&gt;&gt;&gt;&gt;
+01: Ele(button.title,'Delete').waitFor().click().delay(9000)
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: javascript failed twice: {&quot;value&quot;:{&quot;error&quot;:&quot;javascript error&quot;,&quot;message&quot;:&quot;javascript error: Cannot read properties of null (reading 'click')\n  (Session info: chrome=127.0.6533.120)&quot;,&quot;stacktrace&quot;:&quot;\tGetHandleVerifier [0x00007FF76D339642+30946]\n\t(No symbol) [0x00007FF76D2EE3D9]\n\t(No symbol) [0x00007FF76D1E6FDA]\n\t(No symbol) [0x00007FF76D1EDA57]\n\t(No symbol) [0x00007FF76D1F0058]\n\t(No symbol) [0x00007FF76D27BD7B]\n\t(No symbol) [0x00007FF76D25CA6A]\n\t(No symbol) [0x00007FF76D27B041]\n\t(No symbol) [0x00007FF76D25C813]\n\t(No symbol) [0x00007FF76D22A6E5]\n\t(No symbol) [0x00007FF76D22B021]\n\tGetHandleVerifier [0x00007FF76D46F84D+1301229]\n\tGetHandleVerifier [0x00007FF76D47BDC7+1351783]\n\tGetHandleVerifier [0x00007FF76D472A13+1313971]\n\tGetHandleVerifier [0x00007FF76D36DD16+245686]\n\t(No symbol) [0x00007FF76D2F759F]\n\t(No symbol) [0x00007FF76D2F3814]\n\t(No symbol) [0x00007FF76D2F39A2]\n\t(No symbol) [0x00007FF76D2EA3FF]\n\tBaseThreadInitThunk [0x00007FFD61CD7374+20]\n\tRtlUserThreadStart [0x00007FFD61E1CC91+33]\n&quot;}}
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:160)
+- com.intuit.karate.driver.WebDriver.eval(WebDriver.java:167)
+- com.intuit.karate.driver.WebDriver.evalLocator(WebDriver.java:139)
+- com.intuit.karate.driver.WebDriver.lambda$click$5(WebDriver.java:343)
+- com.intuit.karate.driver.WebDriver.retryIfEnabled(WebDriver.java:121)
+- com.intuit.karate.driver.WebDriver.click(WebDriver.java:343)
+- com.intuit.karate.driver.DriverElement.click(DriverElement.java:105)
+
+classpath:CarePro/CRM/features/AuthActionsFromCRM.feature:56
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-&amp;gt; * skipped">
+  <span class="keyword indention">&gt; *</span>
+  <span class="name">print &quot;Auth Sucessfully Deleted &quot;+ refNum</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-10" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1068806412.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-10" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-1068806412.png">
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
