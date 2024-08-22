@@ -1,0 +1,102 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: MVN clean single-headless Execute tests ${{inputs.APP_NAME}}
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
+        shell: cmd
+        timeout-minutes: 360
+    - name: Python setup
+      if: always()
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Automation Report
+      if: always()
+      uses: PavanMudigonda/html-reporter-github-pages@v1.3
+      with:
+        test_results: ./reports
+        keep_reports: 20
+        gh_pages: gh_pages # BRANCH NAME you like
+        subfolder: docs  # Level 1 Folder Structure you like
+        tool_name: cucumber # Level 2 Folder Structure you like
+        workflow_name: ${{ github.workflow }} # Level 3 Folder Structure you like
+        env: QA # Level 4 Folder Structure you like
+
+    # - name: Create Test run id
+    #   id: testRunId
+    #   if: always()
+    #   run: |
+    #     echo =====Create Test Run in TestRail=====
+
+    #     RESULT=$(curl --request POST \
+    #     --url  'https://testrail.corp.evolenthealth.com/index.php?/api/v2/add_run/20' \
+    #     -u 'AZope@evolent.com:xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG' \
+    #     --header 'Accept: application/json' \
+    #     --header 'Content-Type: application/json' \
+    #     --data ' {'suite_id': 3396, 'description': 'Testing testrail cli\n', 'milestone_id': None, 'include_all': False, 'case_ids': [5792071, 5792072, 5792070], 'name': 'Automated Tests from GitHub workflow'}'
+    #     )
+
+    #     echo "result=$RESULT" >> "$GITHUB_OUTPUT"
+
+    # - name: TestRail CLI upload results
+    #   if: always()
+    #   run: |
+    #     pip install trcli
+    #     trcli -y \
+    #       -h https://testrail.corp.evolenthealth.com/ \
+    #       --project "Identifi Application" \
+    #       -u AZope@evolent.com \
+    #       -p xFHGuyqBhRnBQTZvxuA2-sO3Txq24N9vab4eQ6rdG \
+    #       --insecure \
+    #       --verbose \
+    #       parse_junit \
+    #       --title "Automated Tests from GitHub workflow" \
+    #       --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+    #       --suite-id 3396 \
+    #       --run-id ${{ fromJSON(steps.testRunId.outputs.result).id }} \
+    #       --result-fields custom_environment:2 \
+    #       -f "./target/karate-reports/*.xml"
+
+    # - uses: deblockt/cucumber-report-annotations-action@v1.7
+    #   if: always()
+    #   with:
+    #     access-token: ${{ secrets.GITHUB_TOKEN }}
+    #     path: "**/target/karate-reports/*.json"
+    #     show-global-summary-report: true
+
+    # - name: Deploy 🚀
+    #   if: always()
+    #   uses: JamesIves/github-pages-deploy-action@v4
+    #   with:
+    #       branch: gh-pages
+    #       folder: ./reports # The folder the action should deploy.
+    
