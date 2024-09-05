@@ -55,10 +55,8 @@ jobs:
       if: always()
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-          chdir
-          FOR /F "tokens=* USEBACKQ" %%F IN (`chdir`) DO (SET targetpath=%%F)
           cd "src/test/resources"
-          node index.js  %targetpath%  Automation_DemoProject QA Chrome
+          node index.js  /home/runner/work/publishKarateReportGitPages/publishKarateReportGitPages  Automation_DemoProject QA Chrome
           cd "./target"
           dir
       shell: bash
