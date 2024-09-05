@@ -26,12 +26,12 @@ var options = {
     reporter.generate(options);
     try{
         var zip = new JSZip();
-        const htmlData = fs.readFileSync(process.argv[2]+'/target/cucumber-html-reports/Identifi_Automation_'+process.argv[3]+'.html');
-        zip.file('Identifi_Automation_'+process.argv[3]+'.html', htmlData);
+        const htmlData = fs.readFileSync(process.argv[2]+'/target/cucumber-html-reports/index.html');
+        zip.file('Demo_Automation_'+process.argv[3]+'.html', htmlData);
         zip.generateNodeStream({ type: 'nodebuffer', streamFiles: true,compression: "DEFLATE",compressionOptions: {level: 9} })
-        .pipe(fs.createWriteStream(process.argv[2]+'/target/Identifi_Automation_'+process.argv[3]+'.zip'))
+        .pipe(fs.createWriteStream(process.argv[2]+'/target/Demo_Automation_'+process.argv[3]+'.zip'))
         .on('finish', function () {
-            console.log(process.argv[2]+'/target/Identifi_Automation_'+process.argv[3]+'.zip written.');
+            console.log(process.argv[2]+'/target/Demo_Automation_'+process.argv[3]+'.zip written.');
         });
     }
     catch (err) {

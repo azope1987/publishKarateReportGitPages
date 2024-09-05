@@ -31,8 +31,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
-        shell: cmd
-        timeout-minutes: 360
+      shell: bash
+      timeout-minutes: 360
 
     - name: Python setup
       if: always()
@@ -44,10 +44,8 @@ jobs:
       if: always()
       working-directory: ${{env.GITHUB_WORKSPACE}} 
       run: |
-          cd  "src/test/resources"
+          cd "src/test/resources"
           npm install cucumber-html-reporter jszip
-          cd  "src/test/resources"
-          dir
       shell: bash
       timeout-minutes: 360
 
@@ -57,7 +55,7 @@ jobs:
       run: |
           cd "src/test/resources"
           node index.js  /home/runner/work/publishKarateReportGitPages/publishKarateReportGitPages  Automation_DemoProject QA Chrome
-          cd "./target"
+          cd "/home/runner/work/publishKarateReportGitPages/publishKarateReportGitPages/target"
           dir
       shell: bash
       timeout-minutes: 360
