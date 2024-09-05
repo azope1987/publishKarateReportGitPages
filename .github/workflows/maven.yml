@@ -48,7 +48,7 @@ jobs:
           npm install cucumber-html-reporter jszip
           cd  "src/test/resources"
           dir
-      shell: cmd
+      shell: bash
       timeout-minutes: 360
 
     - name: node Automation_DemoProject
@@ -61,7 +61,7 @@ jobs:
           node index.js  %targetpath%  Automation_DemoProject QA Chrome
           cd "./target"
           dir
-      shell: cmd
+      shell: bash
       timeout-minutes: 360
 
     - name: Automation Report
