@@ -30,7 +30,7 @@ jobs:
     - name: MVN clean single-headless Execute tests ${{inputs.APP_NAME}}
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
+        mvn clean test -Dkarate.options="--tags @TC_01 -T 5" -Dtest=ExamplesTest 
       shell: bash
       timeout-minutes: 360
 
