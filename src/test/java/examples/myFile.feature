@@ -5,6 +5,7 @@ for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
 Background:
   * url 'https://jsonplaceholder.typicode.com'
 
+@TC_03
 Scenario: create a user and then get it by id02
     * def user =
       """

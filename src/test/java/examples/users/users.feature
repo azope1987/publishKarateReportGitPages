@@ -5,7 +5,7 @@ Feature: sample karate test script01
   Background:
     * url 'https://jsonplaceholder.typicode.com'
 
-  
+  @TC_01
   Scenario: get all users and then get the first user by id
     Given path 'users'
     When method get
@@ -16,7 +16,7 @@ Feature: sample karate test script01
     Given path 'users', first.id
     When method get
     Then status 200
-
+  @TC_02
   Scenario: create a user and then get it by id01
     * def user =
       """

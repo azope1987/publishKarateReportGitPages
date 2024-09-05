@@ -10,9 +10,9 @@ name: AutomationExecution
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    # branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
   build:
@@ -33,17 +33,40 @@ jobs:
         mvn clean test -Dkarate.options="--tags @AZ -T 5" -Dtest=ExamplesTest 
         shell: cmd
         timeout-minutes: 360
+
     - name: Python setup
       if: always()
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
 
+    - name: Install npm dependencies - npm install cucumber-html-reporter
+      working-directory: ${{env.GITHUB_WORKSPACE}} 
+      run: |
+          cd  "src/test/resources"
+          npm install cucumber-html-reporter jszip
+          cd  "src/test/resources"
+          dir
+      shell: cmd
+      timeout-minutes: 360
+
+    - name: node Automation_DemoProject
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+          chdir
+          FOR /F "tokens=* USEBACKQ" %%F IN (`chdir`) DO (SET targetpath=%%F)
+          cd "src/test/resources"
+          node index.js  %targetpath%  Automation_DemoProject QA Chrome
+          cd "./target"
+          dir
+      shell: cmd
+      timeout-minutes: 360
+
     - name: Automation Report
       if: always()
       uses: PavanMudigonda/html-reporter-github-pages@v1.3
       with:
-        test_results: ./reports
+        test_results: ./target/cucumber-html-reports
         keep_reports: 20
         gh_pages: gh_pages # BRANCH NAME you like
         subfolder: docs  # Level 1 Folder Structure you like
