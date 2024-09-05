@@ -41,6 +41,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install npm dependencies - npm install cucumber-html-reporter
+      if: always()
       working-directory: ${{env.GITHUB_WORKSPACE}} 
       run: |
           cd  "src/test/resources"
@@ -51,6 +52,7 @@ jobs:
       timeout-minutes: 360
 
     - name: node Automation_DemoProject
+      if: always()
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
           chdir
