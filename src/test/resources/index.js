@@ -10,7 +10,7 @@ var options = {
         reportSuiteAsScenarios: true,
         scenarioTimestamp: true,
         name: process.argv[3]+' Test Report',
-        brandTitle:'Identifi',
+        brandTitle:'Demo Automation',
         columnLayout:2,
         scenarioTimestamp: true,
         failedSummaryReport: true,
