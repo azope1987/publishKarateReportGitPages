@@ -69,6 +69,11 @@ jobs:
         gh_pages: gh_pages # BRANCH NAME you like
         subfolder: docs  # Level 1 Folder Structure you like
         tool_name: DemoPortal # Level 3 Folder Structure you like
+    
+    - name: Print report link
+      if: always()
+      run: |
+        echo "Report Link: https://$GITHUB_REPOSITORY.github.io/$GITHUB_RUN_ID/docs/DemoPortal/index.html"
 
     # - name: Create Test run id
     #   id: testRunId
